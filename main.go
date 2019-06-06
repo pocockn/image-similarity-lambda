@@ -15,7 +15,6 @@ var (
 )
 
 func main() {
-
 	dynamoDBClient, err := createDynamoDBClient()
 	if err != nil {
 		log.Fatal(err)
@@ -23,7 +22,7 @@ func main() {
 
 	client := rekognition.Client{
 		Rekognition: rekognitionWrapper.NewClient(nil),
-		DyanmoDB:    dynamoDBClient,
+		DynamoDB:    dynamoDBClient,
 	}
 
 	lambda.Start(client.Handle)

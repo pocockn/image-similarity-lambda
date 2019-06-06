@@ -1,3 +1,5 @@
+github.com/aws/aws-lambda-go v1.11.1 h1:wuOnhS5aqzPOWns71FO35PtbtBKHr4MYsPVt5qXLSfI=
+github.com/aws/aws-lambda-go v1.11.1/go.mod h1:Rr2SMTLeSMKgD45uep9V/NP8tnbCcySgu04cx0k/6cw=
 github.com/aws/aws-sdk-go v1.19.42 h1:HxUVd+4MxOildxsh4D3fu5ajfpEVcxnjT9oi5cxMOUI=
 github.com/aws/aws-sdk-go v1.19.42/go.mod h1:KmX6BPdI08NWTb3/sm4ZGu5ShLoqVDhKgpiN924inxo=
 github.com/davecgh/go-spew v1.1.0 h1:ZDRjVQ15GmhC3fiQ8ni8+OwkZQO4DARzQgrnXU1Liz8=
@@ -13,6 +15,7 @@ github.com/pocockn/awswrappers v0.0.0-20190425100525-100bf35831ff/go.mod h1:6XoY
 github.com/pocockn/awswrappers v0.0.0-20190604072748-a1628bbacc94 h1:bBMWjRRC8MG1eoSsmjV0Cj01Rz2chikjnGo+8pftyFw=
 github.com/pocockn/awswrappers v0.0.0-20190604072748-a1628bbacc94/go.mod h1:6XoYytk8KI5O6Mlqu5k2uJIok+yjve/dh7Kz04yVeWY=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
+github.com/stretchr/testify v1.2.1/go.mod h1:a8OnRcib4nhh0OaRAV+Yts87kKdq0PP7pXfy6kDkUVs=
 github.com/stretchr/testify v1.3.0 h1:TivCn/peBQ7UY8ooIcPgZFpTNSz0Q2U6UrFlUfqbe0Q=
 github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UVUgZn+9EI=
 github.com/vidsy/awswrappers v0.0.0-20190425100525-100bf35831ff h1:9QM4+jxvn79G5NqzU2jX7LoVa1y2CsDJQG6aLZNNeUY=
@@ -21,3 +24,4 @@ github.com/vidsy/backoff v0.0.0-20180627142105-4c308d51ad0b h1:H9cy1vRPGwogxwdYh
 github.com/vidsy/backoff v0.0.0-20180627142105-4c308d51ad0b/go.mod h1:qb6mrMlhGBIYkjFA0JaYzQVJkr17kXc7tUjW4PcV5v4=
 github.com/vidsy/go-kmsconfig v0.0.0-20190205094205-1627843c4cce h1:XzUOcVH/fcyrN5SSeKS/P7TCxVWprJBEjPamm5k4iwk=
 github.com/vidsy/go-kmsconfig v0.0.0-20190205094205-1627843c4cce/go.mod h1:32RHQ/FvmpciHYELMSaKoHBebu2TmzO737aUMBNWWPI=
+gopkg.in/urfave/cli.v1 v1.20.0/go.mod h1:vuBzUtMdQeixQj8LVd+/98pzhxNGQoyuPBlsXHOQNO0=

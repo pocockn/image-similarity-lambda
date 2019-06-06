@@ -22,7 +22,7 @@ test:
 	@go test "${PACKAGES}" -cover
 
 vet:
-	@go tool vet "${PACKAGES}"
+	@go vet "${PACKAGES}"
 
 zip-binary: build-binary
 	@echo "Zipping binary..."
