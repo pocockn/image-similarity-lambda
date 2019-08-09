@@ -2,6 +2,8 @@ package rekognition
 
 import (
 	"context"
+	"github.com/pocockn/models/sns"
+	"github.com/pocockn/models/sns/lambda"
 
 	"github.com/aws/aws-sdk-go/aws"
 	rekognitionLib "github.com/aws/aws-sdk-go/service/rekognition"
@@ -24,19 +26,24 @@ type (
 
 // Handle handles the request within Lambda, performing key phrase analysis and
 // saving the analysed result in DynamoDB.
-func (c Client) Handle(ctx context.Context, shout models.ShoutInput) error {
+func (c Client) Handle(ctx context.Context, message sns.Message) error {
+	imageSimilarity, err := lambda.NewImageSimilarityFromSNSPayload(*message.Payload)
+	if err != nil {
+		return errors.Wrap(err, "problem creating image similarity from sns payload")
+	}
+
 	compareFacesInput := rekognitionLib.CompareFacesInput{
 		SimilarityThreshold: aws.Float64(5.000000),
 		SourceImage: &rekognitionLib.Image{
 			S3Object: &rekognitionLib.S3Object{
 				Bucket: aws.String(bucketName),
-				Name:   aws.String("source_image.jpg"),
+				Name:   aws.String(imageSimilarity.Source),
 			},
 		},
 		TargetImage: &rekognitionLib.Image{
 			S3Object: &rekognitionLib.S3Object{
 				Bucket: aws.String(bucketName),
-				Name:   aws.String("target_image.jpg"),
+				Name:   aws.String(imageSimilarity.Target),
 			},
 		},
 	}
@@ -47,7 +54,7 @@ func (c Client) Handle(ctx context.Context, shout models.ShoutInput) error {
 	}
 
 	shoutOutput := models.ShoutOutput{
-		ShoutID:     shout.ShoutID,
+		ShoutID:     imageSimilarity.ShoutID,
 		FaceMatches: compareFaceOutput.FaceMatches,
 	}
 
